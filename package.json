@@ -1,0 +1,25 @@
+{
+  "name": "wizlogics-backend",
+  "version": "1.0.0",
+  "description": "Backend of my FYP \"WizLogics: A Learning Platform\" where users can learn to code for free",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zain-ahmed1713/wizlogics-backend.git"
+  },
+  "author": "Zain Ahmed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zain-ahmed1713/wizlogics-backend/issues"
+  },
+  "homepage": "https://github.com/zain-ahmed1713/wizlogics-backend#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
