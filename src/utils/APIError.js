@@ -1,6 +1,6 @@
 class APIError extends Error {
     constructor(status, code, errorMessage) { // E.g., Status=error, code-404, message="Data not found" 
-        super(status, code, errorMessage);
+        super(errorMessage);
         this.status = status;
         this.code = code;
         this.errorMessage = errorMessage;
