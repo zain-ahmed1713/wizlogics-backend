@@ -56,7 +56,7 @@ const signupUser = asyncHandler(async (req, res) => {
     await sendEmail(email, "Verify your Email", `<div>
       <div>
         <h3>Your Verification Code:</h3>
-        <p style={{ textAlign: "center" }}>${verificationCode}</p>
+        <p style={{ textAlign: "center" }}>${OTP}</p>
       </div>
       <div>
         <p>If you didn&apos;t request this, please ignore this email.</p>
