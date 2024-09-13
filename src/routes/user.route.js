@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { signupUser } from "../controllers/signup.controller.js";
-import { verifyUser } from "../controllers/verifyUser.controller.js";
-import { regenerateOTP } from "../controllers/regenerateOTP.controller.js";
-import { loginUser } from "../controllers/login.controller.js";
+import { signupUser } from "../controllers/user-controllers/signup.controller.js";
+import { verifyUser } from "../controllers/user-controllers/verifyUser.controller.js";
+import { regenerateOTP } from "../controllers/user-controllers/regenerateOTP.controller.js";
+import { loginUser } from "../controllers/user-controllers/login.controller.js";
+import { logoutUser } from "../controllers/user-controllers/logout.controller.js";
 import { verifyJWT } from "../middleware/verifyJWT.middleware.js";
-import { logoutUser } from "../controllers/logout.controller.js";
 
 const router = Router();
 

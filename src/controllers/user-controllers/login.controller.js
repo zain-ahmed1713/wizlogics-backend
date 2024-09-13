@@ -1,10 +1,10 @@
-import { User } from "../models/user.model.js";
-import { APIError } from "../utils/APIError.js";
-import asyncHandler from "../utils/asyncHandler.js";
+import { User } from "../../models/user.model.js";
+import { APIError } from "../../utils/APIError.js";
+import asyncHandler from "../../utils/asyncHandler.js";
 import bcrypt from "bcrypt";
-import { generateJWTAccessToken } from "../utils/generateJWTAccessToken.js";
-import { generateJWTRefreshToken } from "../utils/generateJWTRefreshToken.js";
-import { APIResponse } from "../utils/APIResponse.js";
+import { generateJWTAccessToken } from "../../utils/generateJWTAccessToken.js";
+import { generateJWTRefreshToken } from "../../utils/generateJWTRefreshToken.js";
+import { APIResponse } from "../../utils/APIResponse.js";
 
 const generateJWTTokens = async (userID) => {
     try {
