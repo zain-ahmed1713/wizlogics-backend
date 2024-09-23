@@ -4,12 +4,12 @@ const flashcardAttemptSchema = new mongoose.Schema({
     flashcardID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: Flashcard
+        ref: "Flashcard"
     },
     userID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: User
+        ref: "User"
     },
     status: {
         type: Boolean
