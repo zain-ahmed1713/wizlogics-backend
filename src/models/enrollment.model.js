@@ -4,12 +4,12 @@ const enrollmentSchema = new mongoose.Schema({
     userID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: User
+        ref: "User"
     },
     courseID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: Course
+        ref: "Course"
     },
     status: {
         type: String

@@ -4,12 +4,12 @@ const likeSchema = new mongoose.Schema({
     postsID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: Post
+        ref: "Post"
     },
     userID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: User
+        ref: "User"
     },
 }, { timestamps: true })
 
