@@ -4,7 +4,7 @@ const flashcardSchema = new mongoose.Schema({
     deckID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: Deck
+        ref: "Deck"
     },
     question: {
         type: String,

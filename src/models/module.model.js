@@ -4,7 +4,7 @@ const moduleSchema = new mongoose.Schema({
     courseID: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: Course
+        ref: "Course"
     },
     title: {
         type: String,
