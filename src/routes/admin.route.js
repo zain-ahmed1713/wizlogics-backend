@@ -10,6 +10,15 @@ import { fetchModule } from "../controllers/admin-controllers/fetchModule.contro
 import { createModule } from "../controllers/admin-controllers/createModule.controller.js";
 import { updateModule } from "../controllers/admin-controllers/updateModule.controller.js";
 import { deleteModule } from "../controllers/admin-controllers/deleteModule.controller.js";
+import { fetchAllDecks } from "../controllers/admin-controllers/fetchAllDecks.controller.js";
+import { createDeck } from "../controllers/admin-controllers/createDeck.controller.js";
+import { updateDeck } from "../controllers/admin-controllers/updateDeck.controller.js";
+import { removeDeck } from "../controllers/admin-controllers/removeDeck.controller.js";
+import { fetchAllFlashcards } from "../controllers/admin-controllers/fetchAllFlashcards.controller.js";
+import { fetchFlashcard } from "../controllers/admin-controllers/fetchFlashcard.controller.js";
+import { createFlashcard } from "../controllers/admin-controllers/createFlashcard.controller.js";
+import { updateFlashcard } from "../controllers/admin-controllers/updateFlashcard.controller.js";
+import { deleteFlashcard } from "../controllers/admin-controllers/deleteFlashcard.controller.js";
 
 const router = Router();
 
@@ -23,5 +32,14 @@ router.route("/get-module/:id").get(verifyJWT, fetchModule) // :id is moduleID
 router.route("/add-module/:id").post(verifyJWT, createModule) // :id is courseID
 router.route("/update-module/:id").patch(verifyJWT, updateModule) // :id is moduleID
 router.route("/delete-module/:id").delete(verifyJWT, deleteModule) // :id is moduleID
+router.route("/get-all-decks").get(verifyJWT, fetchAllDecks)
+router.route("/add-deck").post(verifyJWT, createDeck)
+router.route("/update-deck/:id").patch(verifyJWT, updateDeck)
+router.route("/delete-deck/:id").delete(verifyJWT, removeDeck)
+router.route("/get-all-flashcards").get(verifyJWT, fetchAllFlashcards)
+router.route("/get-flashcard/:id").get(verifyJWT, fetchFlashcard)
+router.route("/add-flashcard/:id").post(verifyJWT, createFlashcard) // :id is deckID
+router.route("/update-flashcard/:id").patch(verifyJWT, updateFlashcard) // :id is flashcardID
+router.route("/delete-flashcard/:id").delete(verifyJWT, deleteFlashcard) // :id is flashcardID
 
 export default router;
