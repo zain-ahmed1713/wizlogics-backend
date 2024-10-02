@@ -9,7 +9,6 @@ import { uploadProfilePhoto } from "../controllers/user-controllers/uploadProfil
 import { upload } from "../middleware/saveFilesToLocalServer.middleware.js";
 import { updateBio } from "../controllers/user-controllers/updateBio.controller.js";
 import { verifyJWT } from "../middleware/verifyJWT.middleware.js";
-import { logoutUser } from "../controllers/logout.controller.js";
 import { authStatus } from "../controllers/user-controllers/authStatus.controller.js";
 
 const router = Router();
