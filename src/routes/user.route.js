@@ -9,6 +9,8 @@ import { uploadProfilePhoto } from "../controllers/user-controllers/uploadProfil
 import { upload } from "../middleware/saveFilesToLocalServer.middleware.js";
 import { updateBio } from "../controllers/user-controllers/updateBio.controller.js";
 import { verifyJWT } from "../middleware/verifyJWT.middleware.js";
+import { logoutUser } from "../controllers/logout.controller.js";
+import { authStatus } from "../controllers/authStatus.controller.js";
 
 const router = Router();
 
@@ -16,6 +18,7 @@ router.route("/register").post(signupUser)
 router.route("/verify").post(verifyUser)
 router.route("/regenerate-otp").post(regenerateOTP)
 router.route("/auth/login").post(loginUser)
+router.route("/auth/status").get(verifyJWT, authStatus)
 router.route("/auth/logout").post(verifyJWT, logoutUser)
 router.route("/profile/:username").get(fetchUserInfo)
 router.route("/profile/upload-photo").patch(verifyJWT, upload.single("profilePicture"), uploadProfilePhoto)
