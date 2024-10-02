@@ -1,9 +1,9 @@
-import asyncHandler from "../utils/asyncHandler.js";
-import { APIError } from "../utils/APIError.js";
-import { APIResponse } from "../utils/APIResponse.js"
-import { User } from "../models/user.model.js";
+import asyncHandler from "../../utils/asyncHandler.js";
+import { APIError } from "../../utils/APIError.js";
+import { APIResponse } from "../../utils/APIResponse.js"
+import { User } from "../../models/user.model.js";
 import bcrypt from "bcrypt";
-import { sendEmail } from "../utils/sendEmail.js";
+import { sendEmail } from "../../utils/sendEmail.js";
 
 const signupUser = asyncHandler(async (req, res) => {
     const { name, email, username, password } = await req.body;

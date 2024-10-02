@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 const flashcardSchema = new mongoose.Schema({
     deckID: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: Deck
+        ref: "Deck"
     },
     question: {
         type: String,

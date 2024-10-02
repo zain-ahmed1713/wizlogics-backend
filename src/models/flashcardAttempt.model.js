@@ -2,14 +2,14 @@ import mongoose from "mongoose";
 
 const flashcardAttemptSchema = new mongoose.Schema({
     flashcardID: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: Flashcard
+        ref: "Flashcard"
     },
     userID: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: User
+        ref: "User"
     },
     status: {
         type: Boolean

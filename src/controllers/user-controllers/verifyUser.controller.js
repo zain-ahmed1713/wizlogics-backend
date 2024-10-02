@@ -1,7 +1,7 @@
-import { User } from "../models/user.model.js";
-import { APIError } from "../utils/APIError.js";
-import { APIResponse } from "../utils/APIResponse.js";
-import asyncHandler from "../utils/asyncHandler.js"
+import { User } from "../../models/user.model.js";
+import { APIError } from "../../utils/APIError.js";
+import { APIResponse } from "../../utils/APIResponse.js";
+import asyncHandler from "../../utils/asyncHandler.js"
 
 const verifyUser = asyncHandler(async (req, res) => {
     const { username, OTP } = await req.body;

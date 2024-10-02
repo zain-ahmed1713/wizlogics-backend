@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 const moduleSchema = new mongoose.Schema({
     courseID: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: Course
+        ref: "Course"
     },
     title: {
         type: String,
