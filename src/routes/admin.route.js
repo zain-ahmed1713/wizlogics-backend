@@ -19,11 +19,13 @@ import { fetchFlashcard } from "../controllers/admin-controllers/fetchFlashcard.
 import { createFlashcard } from "../controllers/admin-controllers/createFlashcard.controller.js";
 import { updateFlashcard } from "../controllers/admin-controllers/updateFlashcard.controller.js";
 import { deleteFlashcard } from "../controllers/admin-controllers/deleteFlashcard.controller.js";
+import { fetchCourse } from "../controllers/admin-controllers/fetchCourse.controller.js";
 
 const router = Router();
 
 router.route("/get-all-users").get(verifyJWT, fetchAllUsers)
 router.route("/get-all-courses").get(verifyJWT, fetchAllCourses)
+router.route("/get-course/:id").get(verifyJWT, fetchCourse) // :id is courseID
 router.route("/add-course").post(verifyJWT, createCourse)
 router.route("/update-course/:id").patch(verifyJWT, updateCourse)
 router.route("/delete-course/:id").delete(verifyJWT, deleteCourse)
