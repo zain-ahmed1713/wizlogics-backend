@@ -5,13 +5,19 @@ import asyncHandler from "../../utils/asyncHandler.js";
 
 const createDeck = asyncHandler(async (req, res) => {
     try {
-        const { title, courseID, moduleID } = await req.body;
+        const { title } = await req.body;
 
         if (!title) {
             throw new APIError("error", 400, "Title is required");
         }
 
-        const deck = await Deck.create({ title, courseID, moduleID });
+        const existingDeck = await Deck.findOne({ title });
+
+        if (existingDeck) {
+            throw new APIError("error", 400, "Deck already exists");
+        }
+
+        const deck = await Deck.create({ title });
         const createdDeck = await deck.save();
 
         return res.status(201).json(new APIResponse("success", 201, createdDeck, "Deck created successfully"));
