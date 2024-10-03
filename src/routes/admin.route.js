@@ -20,6 +20,7 @@ import { createFlashcard } from "../controllers/admin-controllers/createFlashcar
 import { updateFlashcard } from "../controllers/admin-controllers/updateFlashcard.controller.js";
 import { deleteFlashcard } from "../controllers/admin-controllers/deleteFlashcard.controller.js";
 import { fetchCourse } from "../controllers/admin-controllers/fetchCourse.controller.js";
+import { fetchDeck } from "../controllers/admin-controllers/fetchDeck.controller.js";
 
 const router = Router();
 
@@ -35,10 +36,11 @@ router.route("/add-module/:id").post(verifyJWT, createModule) // :id is courseID
 router.route("/update-module/:id").patch(verifyJWT, updateModule) // :id is moduleID
 router.route("/delete-module/:id").delete(verifyJWT, deleteModule) // :id is moduleID
 router.route("/get-all-decks").get(verifyJWT, fetchAllDecks)
+router.route("/get-deck/:id").get(verifyJWT, fetchDeck) // :id is deckID
 router.route("/add-deck").post(verifyJWT, createDeck)
 router.route("/update-deck/:id").patch(verifyJWT, updateDeck)
 router.route("/delete-deck/:id").delete(verifyJWT, removeDeck)
-router.route("/get-all-flashcards").get(verifyJWT, fetchAllFlashcards)
+router.route("/get-all-flashcards/:id").get(verifyJWT, fetchAllFlashcards) // :id is deckID
 router.route("/get-flashcard/:id").get(verifyJWT, fetchFlashcard)
 router.route("/add-flashcard/:id").post(verifyJWT, createFlashcard) // :id is deckID
 router.route("/update-flashcard/:id").patch(verifyJWT, updateFlashcard) // :id is flashcardID
