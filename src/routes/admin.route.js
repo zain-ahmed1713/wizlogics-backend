@@ -21,6 +21,8 @@ import { updateFlashcard } from "../controllers/admin-controllers/updateFlashcar
 import { deleteFlashcard } from "../controllers/admin-controllers/deleteFlashcard.controller.js";
 import { fetchCourse } from "../controllers/admin-controllers/fetchCourse.controller.js";
 import { fetchDeck } from "../controllers/admin-controllers/fetchDeck.controller.js";
+import { enrollUserInCourse } from "../controllers/admin-controllers/enrollUserInCourse.js";
+import { showEnrollmentsOfUser } from "../controllers/admin-controllers/showEnrollmentsOfUser.js";
 
 const router = Router();
 
@@ -45,5 +47,7 @@ router.route("/get-flashcard/:id").get(verifyJWT, fetchFlashcard)
 router.route("/add-flashcard/:id").post(verifyJWT, createFlashcard) // :id is deckID
 router.route("/update-flashcard/:id").patch(verifyJWT, updateFlashcard) // :id is flashcardID
 router.route("/delete-flashcard/:id").delete(verifyJWT, deleteFlashcard) // :id is flashcardID
+router.route("/get-user-enrollments/:userID").get(verifyJWT, showEnrollmentsOfUser)
+router.route("/enroll-in-course").post(verifyJWT, enrollUserInCourse)
 
 export default router;
