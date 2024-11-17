@@ -23,6 +23,8 @@ import { fetchCourse } from "../controllers/admin-controllers/fetchCourse.contro
 import { fetchDeck } from "../controllers/admin-controllers/fetchDeck.controller.js";
 import { enrollUserInCourse } from "../controllers/admin-controllers/enrollUserInCourse.js";
 import { showEnrollmentsOfUser } from "../controllers/admin-controllers/showEnrollmentsOfUser.js";
+import { attemptFlashcard } from "../controllers/admin-controllers/attemptFlashcard.controller.js";
+import { showattemptedFlashcards } from "../controllers/admin-controllers/showAttemptedFlashcards.controller.js";
 
 const router = Router();
 
@@ -49,5 +51,7 @@ router.route("/update-flashcard/:id").patch(verifyJWT, updateFlashcard) // :id i
 router.route("/delete-flashcard/:id").delete(verifyJWT, deleteFlashcard) // :id is flashcardID
 router.route("/get-user-enrollments/:userID").get(verifyJWT, showEnrollmentsOfUser)
 router.route("/enroll-in-course").post(verifyJWT, enrollUserInCourse)
+router.route("/attempt-flashcard").post(verifyJWT, attemptFlashcard)
+router.route("/show-attempted-flashcards/:userID").get(verifyJWT, showattemptedFlashcards)
 
 export default router;
