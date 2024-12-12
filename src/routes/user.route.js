@@ -18,6 +18,7 @@ import { executeCode } from "../controllers/user-controllers/executeCode.control
 import { followUser } from "../controllers/user-controllers/followUser.controller.js";
 import { checkFollowedStatus } from "../controllers/user-controllers/checkFollowedStatus.controller.js";
 import { unFollowUser } from "../controllers/user-controllers/unFollowUser.controller.js";
+import { fetchLeaderboard } from "../controllers/user-controllers/fetchLeaderboard.controller.js";
 
 const router = Router();
 
@@ -38,5 +39,6 @@ router.route("/execute").post(verifyJWT, executeCode)
 router.route("/follow-user").post(verifyJWT, followUser)
 router.route("/followed-status").post(verifyJWT, checkFollowedStatus)
 router.route("/unfollow-user").post(verifyJWT, unFollowUser)
+router.route("/fetch-leaderboard").get(verifyJWT, fetchLeaderboard)
 
 export default router;

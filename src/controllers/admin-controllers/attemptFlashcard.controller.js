@@ -1,4 +1,5 @@
 import { FlashcardAttempt } from "../../models/flashcardAttempt.model.js";
+import { User } from "../../models/user.model.js";
 import { APIResponse } from "../../utils/APIResponse.js";
 import { APIError } from "../../utils/APIError.js";
 import asyncHandler from "../../utils/asyncHandler.js";
@@ -16,8 +17,17 @@ const attemptFlashcard = asyncHandler(async (req, res) => {
         alreadyAttempted.status = status;
         alreadyAttempted.dateAttempted = new Date();
         await alreadyAttempted.save();
+
+        if (status) {
+            await User.findByIdAndUpdate(userID, { $inc: { points: 5 } })
+        }
+
     } else {
         await FlashcardAttempt.create({ flashcardID, userID, status, dateAttempted: new Date() });
+
+        if (status) {
+            await User.findByIdAndUpdate(userID, { $inc: { points: 5 } })
+        }
     }
 
     const flashcards = await FlashcardAttempt.find({ userID }).populate("flashcardID");
