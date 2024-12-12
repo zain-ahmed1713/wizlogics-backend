@@ -15,6 +15,9 @@ import { fetchPosts } from "../controllers/user-controllers/fetchPosts.controlle
 import { likePost } from "../controllers/user-controllers/likePost.controller.js";
 import { unLikePost } from "../controllers/user-controllers/unlikePost.controller.js";
 import { executeCode } from "../controllers/user-controllers/executeCode.controller.js";
+import { followUser } from "../controllers/user-controllers/followUser.controller.js";
+import { checkFollowedStatus } from "../controllers/user-controllers/checkFollowedStatus.controller.js";
+import { unFollowUser } from "../controllers/user-controllers/unFollowUser.controller.js";
 
 const router = Router();
 
@@ -32,5 +35,8 @@ router.route("/fetch-posts").get(verifyJWT, fetchPosts)
 router.route("/like-post").post(verifyJWT, likePost)
 router.route("/unlike-post").post(verifyJWT, unLikePost)
 router.route("/execute").post(verifyJWT, executeCode)
+router.route("/follow-user").post(verifyJWT, followUser)
+router.route("/followed-status").post(verifyJWT, checkFollowedStatus)
+router.route("/unfollow-user").post(verifyJWT, unFollowUser)
 
 export default router;
