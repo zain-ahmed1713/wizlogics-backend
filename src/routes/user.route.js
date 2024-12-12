@@ -14,6 +14,7 @@ import { createPost } from "../controllers/user-controllers/createPost.controlle
 import { fetchPosts } from "../controllers/user-controllers/fetchPosts.controller.js";
 import { likePost } from "../controllers/user-controllers/likePost.controller.js";
 import { unLikePost } from "../controllers/user-controllers/unlikePost.controller.js";
+import { executeCode } from "../controllers/user-controllers/executeCode.controller.js";
 
 const router = Router();
 
@@ -30,5 +31,6 @@ router.route("/create-post").post(verifyJWT, createPost)
 router.route("/fetch-posts").get(verifyJWT, fetchPosts)
 router.route("/like-post").post(verifyJWT, likePost)
 router.route("/unlike-post").post(verifyJWT, unLikePost)
+router.route("/execute").post(verifyJWT, executeCode)
 
 export default router;
